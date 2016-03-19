@@ -1,7 +1,7 @@
 {
   "name": "dropbox-client",
   "version": "1.0.0",
-  "description": "Cross-environment JavaScript client for the Dropbox API",
+  "description": "JavaScript client for the Dropbox API",
   "author": "Michael Jackson",
   "license": "MIT",
   "main": "lib",

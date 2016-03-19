@@ -6,11 +6,7 @@
 [npm-badge]: https://img.shields.io/npm/v/dropbox-client.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/dropbox-client
 
-[dropbox-client](https://www.npmjs.com/package/dropbox-client) lets you compose HTTP clients using JavaScript's [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). This library has the following goals:
-
-  - Preserve the full capabilities of the fetch API
-  - Provide an extendable  middleware API
-  - Use the same API on both client and server
+[dropbox-client](https://www.npmjs.com/package/dropbox-client) is a client for the Dropbox developer API v2 that uses JavaScript's [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 ## Installation
 

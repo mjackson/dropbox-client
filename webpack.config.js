@@ -1,5 +1,3 @@
-const webpack = require('webpack')
-
 module.exports = {
 
   output: {
@@ -11,13 +9,6 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
     ]
-  },
-
-  plugins: [
-    new webpack.IgnorePlugin(/node-fetch/),
-    new webpack.DefinePlugin({
-      'typeof window': JSON.stringify('object')
-    })
-  ]
+  }
 
 }

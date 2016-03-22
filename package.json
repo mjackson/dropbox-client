@@ -4,8 +4,6 @@
   "description": "Dropbox API client",
   "author": "Michael Jackson",
   "license": "MIT",
-  "webpack": "lib",
-  "browser": "umd/dropbox-client.min.js",
   "main": "lib",
   "files": [
     "lib",
@@ -22,7 +20,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "http-client": "^2.4.1",
+    "http-client": "^3.0.0",
     "query-string": "^3.0.1"
   },
   "devDependencies": {

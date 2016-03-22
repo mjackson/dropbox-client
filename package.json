@@ -43,5 +43,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mjackson/dropbox-client.git"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-1"
+    ]
   }
 }

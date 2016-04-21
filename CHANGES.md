@@ -1,3 +1,10 @@
+[v3.0.1]
+> Apr 20, 2016
+
+- Removed tests that were inadvertently included in npm package
+
+[v3.0.1]: https://github.com/mjackson/dropbox-client/compare/v3.0.0...v3.0.1
+
 [v3.0.0]
 > Apr 20, 2016
 

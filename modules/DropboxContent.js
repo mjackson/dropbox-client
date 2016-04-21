@@ -5,7 +5,8 @@ import {
   base,
   body,
   header,
-  handleResponse
+  handleResponse,
+  method
 } from 'http-client'
 
 const bearerToken = (token) =>
@@ -37,6 +38,7 @@ const returnFile = createStack(
 
 const getFile = (token, path, args) =>
   createFetch(
+    method('POST'),
     bearerToken(token),
     apiVersion(2),
     apiArgs(args),
@@ -45,20 +47,21 @@ const getFile = (token, path, args) =>
 
 const putFile = (token, content, contentType, path, args) =>
   createFetch(
+    method('POST'),
     bearerToken(token),
     apiVersion(2),
     apiArgs(args),
     body(content, contentType)
   )(path)
 
-export const download = (token, path) =>
-  getFile(token, '/files/download', { path })
+export const download = (token, params = {}) =>
+  getFile(token, '/files/download', params)
 
-export const getPreview = (token, path) =>
-  getFile(token, '/files/get_preview', { path })
+export const getPreview = (token, params = {}) =>
+  getFile(token, '/files/get_preview', params)
 
-export const getThumbnail = (token, path, format = 'jpeg', size = 'w64h64') =>
-  getFile(token, '/files/get_thumbnail', { path, format, size })
+export const getThumbnail = (token, params = {}) =>
+  getFile(token, '/files/get_thumbnail', params)
 
-export const upload = (token, content, contentType = 'application/octet-stream', mode = 'add', autorename = false, client_modified = undefined, mute = false) =>
-  putFile(token, content, contentType, '/files/upload', { mode, autorename, client_modified, mute })
+export const upload = (token, content, contentType = 'application/octet-stream', params = {}) =>
+  putFile(token, content, contentType, '/files/upload', params)

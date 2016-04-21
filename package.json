@@ -1,6 +1,6 @@
 {
   "name": "dropbox-client",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Dropbox API client",
   "author": "Michael Jackson",
   "license": "MIT",

@@ -1,8 +1,9 @@
-[HEAD]
+[3.0.2]
+> Apr 28, 2016
 
 - Update http-client dep
 
-[HEAD]: https://github.com/mjackson/dropbox-client/compare/v3.0.1...HEAD
+[3.0.2]: https://github.com/mjackson/dropbox-client/compare/v3.0.1...v3.0.2
 
 [3.0.1]
 > Apr 20, 2016

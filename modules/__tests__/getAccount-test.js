@@ -3,11 +3,11 @@ import expect from 'expect'
 import { getAccount } from '../index'
 
 describe('getAccount', () => {
-  it('uses the correct auth token', () => {
+  it('uses the correct auth token', () => (
     getAccount('token').then(({ options }) => {
       expect(options.headers.Authorization).toEqual('Bearer token')
     })
-  })
+  ))
 
   it('uses the correct HTTP method', () => (
     getAccount('token').then(({ options }) => {

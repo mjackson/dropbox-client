@@ -9,12 +9,12 @@ const getRequestArgs = (file) =>
   file.content
 
 describe('download', () => {
-  it('uses the correct auth token', () => {
+  it('uses the correct auth token', () => (
     download('token', { path: '/home' }).then(file => {
       const { options } = getRequestArgs(file)
       expect(options.headers.Authorization).toEqual('Bearer token')
     })
-  })
+  ))
 
   it('uses the correct HTTP method', () => (
     download('token', { path: '/home' }).then(file => {

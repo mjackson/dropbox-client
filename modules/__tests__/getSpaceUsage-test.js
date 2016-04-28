@@ -3,11 +3,11 @@ import expect from 'expect'
 import { getSpaceUsage } from '../index'
 
 describe('getSpaceUsage', () => {
-  it('uses the correct auth token', () => {
+  it('uses the correct auth token', () => (
     getSpaceUsage('token').then(({ options }) => {
       expect(options.headers.Authorization).toEqual('Bearer token')
     })
-  })
+  ))
 
   it('uses the correct HTTP method', () => (
     getSpaceUsage('token').then(({ options }) => {

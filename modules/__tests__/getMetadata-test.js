@@ -3,11 +3,11 @@ import expect from 'expect'
 import { getMetadata } from '../index'
 
 describe('getMetadata', () => {
-  it('uses the correct auth token', () => {
+  it('uses the correct auth token', () => (
     getMetadata('token').then(({ options }) => {
       expect(options.headers.Authorization).toEqual('Bearer token')
     })
-  })
+  ))
 
   it('uses the correct HTTP method', () => (
     getMetadata('token').then(({ options }) => {

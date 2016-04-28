@@ -3,11 +3,11 @@ import expect from 'expect'
 import { listFolderContinue } from '../index'
 
 describe('listFolderContinue', () => {
-  it('uses the correct auth token', () => {
+  it('uses the correct auth token', () => (
     listFolderContinue('token').then(({ options }) => {
       expect(options.headers.Authorization).toEqual('Bearer token')
     })
-  })
+  ))
 
   it('uses the correct HTTP method', () => (
     listFolderContinue('token').then(({ options }) => {

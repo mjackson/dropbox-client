@@ -3,11 +3,11 @@ import expect from 'expect'
 import { createFolder } from '../index'
 
 describe('createFolder', () => {
-  it('uses the correct auth token', () => {
+  it('uses the correct auth token', () => (
     createFolder('token').then(({ options }) => {
       expect(options.headers.Authorization).toEqual('Bearer token')
     })
-  })
+  ))
 
   it('uses the correct HTTP method', () => (
     createFolder('token').then(({ options }) => {

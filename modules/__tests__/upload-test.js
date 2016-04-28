@@ -3,11 +3,11 @@ import expect from 'expect'
 import { upload } from '../index'
 
 describe('upload', () => {
-  it('uses the correct auth token', () => {
+  it('uses the correct auth token', () => (
     upload('token', 'content').then(({ options }) => {
       expect(options.headers.Authorization).toEqual('Bearer token')
     })
-  })
+  ))
 
   it('uses the correct HTTP method', () => (
     upload('token', 'content').then(({ options }) => {

@@ -17,20 +17,26 @@ export const generateAuthorizeURL = (client_id, redirect_uri, state, force_reapp
     force_reapprove
   })
 
-const returnJSON = createStack(
-  handleResponse(response => {
-    const data = response.jsonData
+const getData = (response) => {
+  const data = response.jsonData
 
-    if (data.error)
-      throw new Error(data.error + ': ' + data.error_description)
+  if (data.error)
+    throw new Error(data.error + ': ' + data.error_description)
 
-    return data
-  }),
-  parseJSON()
+  return data
+}
+
+const getAccessToken = (data) =>
+  data.access_token
+
+const returnToken = createStack(
+  parseJSON(),
+  handleResponse(getData),
+  handleResponse(getAccessToken)
 )
 
-export const getBearerToken = (client_id, client_secret, code, redirect_uri) => {
-  const fetch = createFetch(
+export const getBearerToken = (client_id, client_secret, code, redirect_uri) =>
+  createFetch(
     method('POST'),
     params({
       client_id,
@@ -39,10 +45,5 @@ export const getBearerToken = (client_id, client_secret, code, redirect_uri) => 
       redirect_uri,
       code
     }),
-    returnJSON
-  )
-
-  return fetch('https://api.dropboxapi.com/1/oauth2/token').then(
-    data => data.access_token
-  )
-}
+    returnToken
+  )('https://api.dropboxapi.com/1/oauth2/token')

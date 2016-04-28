@@ -1,45 +1,12 @@
-const contentStub = (input, options) => {
-  // Content methods try to read the Dropbox-API-Result
-  // header in the response.
-  const headers = {}
+const globalFetch = (input, options) => {
+  // Don't run any response handlers. This simplifies testing.
+  if (options)
+    delete options.responseHandlers
 
-  return {
-    headers: {
-      get: (headerName) => headers[headerName]
-    },
-    body: {
-      input,
-      options
-    }
-  }
-}
-
-const apiStub = (input, options) => {
-  // RPC methods return the JSON in the request, so pass
-  // input and options through so we can assert on them.
-  const json = { input, options }
-
-  return {
-    json: () => Promise.resolve(json)
-  }
-}
-
-const fetchStub = (input, options) => {
-  let response
-  if (input.indexOf('https://content.dropboxapi.com/2/files/upload') === 0) {
-    response = { input, options }
-  } else if (input.indexOf('https://content.dropboxapi.com') === 0) {
-    response = contentStub(input, options)
-  } else if (input.indexOf('https://api.dropboxapi.com') === 0) {
-    response = apiStub(input, options)
-  } else {
-    response = { input, options }
-  }
-
-  return Promise.resolve(response)
+  return Promise.resolve({ input, options })
 }
 
 if (typeof self === 'object')
-  self.fetch = fetchStub
+  self.fetch = globalFetch
 else if (typeof global === 'object')
-  global.fetch = fetchStub
+  global.fetch = globalFetch

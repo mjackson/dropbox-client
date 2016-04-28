@@ -20,7 +20,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "http-client": "^3.0.0",
+    "http-client": "^4.0.0",
     "query-string": "^3.0.1"
   },
   "devDependencies": {

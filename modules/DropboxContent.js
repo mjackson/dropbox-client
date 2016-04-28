@@ -29,11 +29,11 @@ const apiResult = (propertyName = 'apiResult') =>
   })
 
 const returnFile = createStack(
+  apiResult(),
   handleResponse(response => ({
     metadata: response.apiResult,
     content: response.body
-  })),
-  apiResult()
+  }))
 )
 
 const getFile = (token, path, args) =>

@@ -16,6 +16,7 @@ const apiVersion = (version) =>
   base('https://api.dropboxapi.com/' + version)
 
 const returnJSON = createStack(
+  parseJSON(),
   handleResponse(response => {
     const data = response.jsonData
 
@@ -23,8 +24,7 @@ const returnJSON = createStack(
       throw new Error(data.error_summary)
 
     return data
-  }),
-  parseJSON()
+  })
 )
 
 const post = (token, path) =>

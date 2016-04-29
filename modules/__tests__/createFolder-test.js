@@ -1,4 +1,3 @@
-import './globals'
 import expect from 'expect'
 import { createFolder } from '../index'
 

@@ -1,4 +1,3 @@
-import './globals'
 import expect from 'expect'
 import { getSpaceUsage } from '../index'
 

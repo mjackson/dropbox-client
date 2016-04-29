@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "lint": "eslint modules",
-    "test": "npm run lint && mocha -r babel-register modules/**/*-test.js",
+    "test": "npm run lint && mocha -r babel-register -r modules/__tests__/globals modules/**/*-test.js",
     "build": "node ./scripts/build.js",
     "build-cjs": "rimraf lib && babel ./modules -d lib --ignore '__tests__'",
     "build-min": "webpack -p modules/index.js umd/dropbox-client.min.js",

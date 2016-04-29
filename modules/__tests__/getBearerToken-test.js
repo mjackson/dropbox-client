@@ -1,4 +1,3 @@
-import './globals'
 import expect from 'expect'
 import { parse as parseQuery } from 'query-string'
 import { getBearerToken } from '../index'

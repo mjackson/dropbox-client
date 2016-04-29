@@ -1,4 +1,3 @@
-import './globals'
 import expect from 'expect'
 import { getCurrentAccount } from '../index'
 

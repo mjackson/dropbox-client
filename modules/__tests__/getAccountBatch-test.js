@@ -1,4 +1,3 @@
-import './globals'
 import expect from 'expect'
 import { getAccountBatch } from '../index'
 

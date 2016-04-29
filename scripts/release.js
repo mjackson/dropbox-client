@@ -22,7 +22,7 @@ const nextVersion = prompt(`Next version (current version is ${getPackageVersion
 const isPrerelease = nextVersion.substring(0, 3) === 'pre'
 
 // 1) Make sure the tests pass
-exec('npm test -- --single-run')
+exec('npm test')
 
 // 2) Increment the package version in package.json
 // 3) Create a new commit

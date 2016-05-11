@@ -11,13 +11,13 @@ describe('getBearerToken', () => {
 
   it('uses the correct content', () => (
     getBearerToken('id', 'secret', 'code', 'uri').then(({ options }) => {
-      expect(parseQuery(options.body)).toEqual({
-        client_id: 'id',
-        client_secret: 'secret',
-        grant_type: 'authorization_code',
-        redirect_uri: 'uri',
-        code: 'code'
-      })
+      const query = parseQuery(options.body)
+
+      expect(query.client_id).toEqual('id')
+      expect(query.client_secret).toEqual('secret')
+      expect(query.grant_type).toEqual('authorization_code')
+      expect(query.redirect_uri).toEqual('uri')
+      expect(query.code).toEqual('code')
     })
   ))
 

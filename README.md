@@ -26,10 +26,10 @@ import { getFile } from 'dropbox-client'
 var getFile = require('dropbox-client').getFile
 ```
 
-The UMD build is also available on [npmcdn](https://npmcdn.com):
+The UMD build is also available on [unpkg](https://unpkg.com):
 
 ```html
-<script src="https://npmcdn.com/dropbox-client/umd/dropbox-client.min.js"></script>
+<script src="https://unpkg.com/dropbox-client/umd/dropbox-client.min.js"></script>
 ```
 
 You can find the library on `window.DropboxClient`.

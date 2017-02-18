@@ -40,7 +40,7 @@
     "mocha": "^3.0.2",
     "pretty-bytes": "^4.0.2",
     "readline-sync": "^1.4.1",
-    "rimraf": "^2.5.2",
+    "rimraf": "^2.6.0",
     "webpack": "^1.12.14"
   },
   "repository": {
